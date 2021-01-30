@@ -11,10 +11,12 @@ class UserController extends Controller
     public function getUser(){
 
         $user = User::all();
-        $user2 = User::where('username' ,'like', 'j%')->get();
+      //  $user2 = User::where('username' ,'like', 'j%')->get();
         
 
-        return response()->json($user2);
+        return response()->json([
+            'users'  => $user
+        ]);
 
     }
 
